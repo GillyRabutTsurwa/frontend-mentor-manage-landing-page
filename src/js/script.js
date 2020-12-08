@@ -20,6 +20,8 @@ const observer = new IntersectionObserver((entries, observer) => {
   });
 }, options);
 
+console.log(observer);
+
 sections.forEach((currentSection) => {
   observer.observe(currentSection);
 });
