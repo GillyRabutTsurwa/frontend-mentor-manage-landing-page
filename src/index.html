@@ -39,19 +39,25 @@
     <button class="button-main">Get Started</button>
   </nav>
   <main class="main">
-    <div class="title">
-      <h1 class="title__title" style="font-size: 5.5rem;">
-        Bring everyone together to build better products.
-      </h1>
-      <p class="title__paragraph" style="font-size: 1.6rem;">
-        Manage makes it simple for software teams to plan day-to-day
-        tasks while keeping the larger team goals in view.
-      </p>
-      <button class="button-main">Get Started</button>
-    </div>
-    <div class="graphimages">
-      <img src="./images/illustration-intro.svg" alt="graphthings">
-    </div>
+    <header class="header">
+      <div class="title">
+        <h1 class="title__title" style="font-size: 5.5rem;">
+          Bring everyone together to build better products.
+        </h1>
+        <p class="title__paragraph" style="font-size: 1.6rem;">
+          Manage makes it simple for software teams to plan day-to-day
+          tasks while keeping the larger team goals in view.
+        </p>
+        <p class="title__paragraph" style="font-size: 1.6rem;">
+          Manage makes it simple for software teams to plan day-to-day
+          tasks while keeping the larger team goals in view.
+        </p>
+        <button class="button-main">Get Started</button>
+      </div>
+      <div class="graphimages">
+        <img src="./images/illustration-intro.svg" alt="graphthings">
+      </div>
+    </header>
     <!-- SECTION: DIFFERENT & TASKS -->
     <section class="different-tasks">
       <div class="different">
@@ -97,6 +103,39 @@
       <h2 class="testimonials__title">What they've said</h2>
 
       <div class="testimonials__boxes">
+        <div class="testimonials__boxes--box">
+          <div class="testimonials__image-container">
+            <img src="./images/avatar-anisha.png" alt="">
+          </div>
+          <h4 class="testimonials__name">Anisha Li</h4>
+          <p class="testimonials__text">
+            "Manage has supercharged our team’s workflow. The ability to maintain
+            visibility on larger milestones at all times keeps everyone motivated."
+          </p>
+        </div>
+
+        <div class="testimonials__boxes--box">
+          <div class="testimonials__image-container">
+            <img src="./images/avatar-richard.png" alt="">
+          </div>
+          <h4 class="testimonials__name">Richard Watts</h4>
+          <p class="testimonials__text">
+            “Manage allows us to provide structure and process. It keeps us organized
+            and focused. I can’t stop recommending them to everyone I talk to!”
+          </p>
+        </div>
+
+        <div class="testimonials__boxes--box">
+          <div class="testimonials__image-container">
+            <img src="./images/avatar-shanai.png" alt="">
+          </div>
+          <h4 class="testimonials__name">Ali Bravo</h4>
+          <p class="testimonials__text">
+            “We have been able to cancel so many other subscriptions since using
+            Manage. There is no more cross-channel confusion and everyone is much more focused.”
+          </p>
+        </div>
+
         <div class="testimonials__boxes--box">
           <div class="testimonials__image-container">
             <img src="./images/avatar-anisha.png" alt="">
@@ -189,38 +228,39 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
+  <footer class="footer">
+    <div class="footer__left">
+      <div class="footer__logo">
+        <img src="./images/logo-light.svg" alt="Logo">
+      </div>
+      <div class="footer__icons">
+        <object data="../images/icon-facebook.svg" type="image/svg+xml" class="footer__icons--icon"></object>
+        <object data="../images/icon-youtube.svg" type="image/svg+xml" class="footer__icons--icon"></object>
+        <object data="../images/icon-twitter.svg" type="image/svg+xml" class="footer__icons--icon"></object>
+        <object data="../images/icon-pinterest.svg" type="image/svg+xml" class="footer__icons--icon"></object>
+        <object data="../images/icon-instagram.svg" type="image/svg+xml" class="footer__icons--icon"></object>
+      </div>
+      <ul class="footer__list first">
+        <li class="footer__list--item">Home</li>
+        <li class="footer__list--item">Pricing</li>
+        <li class="footer__list--item">Products</li>
+        <li class="footer__list--item">About Us</li>
+      </ul>
+    </div>
+    <div class="footer__right">
+      <ul class="footer__list second">
+        <li class="footer__list--item">Careers</li>
+        <li class="footer__list--item">Community</li>
+        <li class="footer__list--item">Privacy Policy</li>
+      </ul>
+      <div class="footer__form">
+        <input type="text" class="footer__form--input" placeholder="Subscribe via e-mail">
+        <button class="button-main btn-footer">Go</button>
+      </div>
+      <p class="footer__copyright">Copyright &copy; 2020. All Rights Reserved</p>
+    </div>
+  </footer>
 </body>
-<footer class="footer">
-  <div class="footer__left">
-    <div class="footer__logo">
-      <img src="./images/logo-light.svg" alt="Logo">
-    </div>
-    <div class="footer__icons">
-      <object data="../images/icon-facebook.svg" type="image/svg+xml" class="footer__icons--icon"></object>
-      <object data="../images/icon-youtube.svg" type="image/svg+xml" class="footer__icons--icon"></object>
-      <object data="../images/icon-twitter.svg" type="image/svg+xml" class="footer__icons--icon"></object>
-      <object data="../images/icon-pinterest.svg" type="image/svg+xml" class="footer__icons--icon"></object>
-      <object data="../images/icon-instagram.svg" type="image/svg+xml" class="footer__icons--icon"></object>
-    </div>
-    <ul class="footer__list first">
-      <li class="footer__list--item">Home</li>
-      <li class="footer__list--item">Pricing</li>
-      <li class="footer__list--item">Products</li>
-      <li class="footer__list--item">About Us</li>
-    </ul>
-  </div>
-  <div class="footer__right">
-    <ul class="footer__list second">
-      <li class="footer__list--item">Careers</li>
-      <li class="footer__list--item">Community</li>
-      <li class="footer__list--item">Privacy Policy</li>
-    </ul>
-    <div class="footer__form">
-      <input type="text" class="footer__form--input" placeholder="Subscribe via e-mail">
-      <button class="button-main btn-footer">Go</button>
-    </div>
-    <p class="footer__copyright">Copyright &copy; 2020. All Rights Reserved</p>
-  </div>
-</footer>
+<script src="./js/script.js"></script>
 
 </html>

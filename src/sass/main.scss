@@ -28,6 +28,17 @@ body {
   height: 100%;
 }
 
+// sections that will make 0 and then have 1 opacity with intersection observer
+section {
+  opacity: 0;
+}
+
+.observer-fade-in {
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease-in;
+  transition: opacity 0.5s ease-in;
+}
+
 // NAVIGATION
 .navigation {
   margin-top: 3rem;
@@ -70,6 +81,63 @@ body {
   }
 }
 
+.header {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100vh;
+
+  // this is nested in header, no longer in main
+  .title {
+    // display: -webkit-box;
+    // display: -ms-flexbox;
+    // display: flex;
+    // -webkit-box-orient: vertical;
+    // -webkit-box-direction: normal;
+    // -ms-flex-direction: column;
+    // flex-direction: column;
+    // -webkit-box-pack: center;
+    // -ms-flex-pack: center;
+    // justify-content: center;
+    // -webkit-box-align: start;
+    // -ms-flex-align: start;
+    // align-items: flex-start;
+    -ms-flex-item-align: start;
+    align-self: start;
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+    height: 100%;
+
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    // -webkit-box-pack: justify;
+    // -ms-flex-pack: justify;
+    // justify-content: space-between;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+
+    & > * {
+      margin-bottom: 4rem;
+    }
+
+    &__title {
+      font-size: 5.5rem;
+      line-height: 1.25;
+    }
+
+    &__paragraph {
+      font-size: 1.6rem;
+      color: $dark-greyish-blue;
+    }
+  }
+}
+
 .button-main {
   @include buttonMain(1.5rem, $vibrant-orange, 1.5rem, 2rem);
 
@@ -100,36 +168,6 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin-top: 5rem;
-
-  .title {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-
-    & > * {
-      margin-bottom: 4rem;
-    }
-
-    &__title {
-      font-size: 5.5rem;
-      line-height: 1.25;
-    }
-
-    &__paragraph {
-      font-size: 1.6rem;
-      color: $dark-greyish-blue;
-    }
-  }
 }
 
 .different-tasks {
@@ -214,8 +252,7 @@ body {
   &__boxes {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    -webkit-column-gap: 5rem;
-    column-gap: 5rem;
+    gap: 5rem;
 
     &--box {
       font-size: 1.3rem;

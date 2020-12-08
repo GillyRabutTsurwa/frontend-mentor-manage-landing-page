@@ -4,6 +4,10 @@ sass.compiler = require("sass");
 const htmlMin = require("gulp-htmlmin");
 
 const cleanCSS = require("gulp-clean-css");
+
+const babel = require("gulp-babel");
+const uglify = require("gulp-uglify");
+
 const browserSync = require("browser-sync").create();
 
 function minifyHTML() {
@@ -27,6 +31,18 @@ function style() {
     .pipe(browserSync.stream());
 }
 
+function configureJS() {
+  return gulp
+    .src("./src/js/*")
+    .pipe(
+      babel({
+        presets: ["@babel/preset-env"],
+      })
+    )
+    .pipe(uglify())
+    .pipe(gulp.dest("./dist/js"));
+}
+
 function copyImages() {
   return gulp.src("./src/images/*").pipe(gulp.dest("./dist/images"));
 }
@@ -38,13 +54,18 @@ function watch() {
     },
     browser: "firefox",
   });
-  gulp.watch(["./src/*.html", "./src/sass/*.scss", "./src/Images/*"], gulp.parallel(minifyHTML, style, copyImages));
+  gulp.watch(
+    ["./src/*.html", "./src/sass/*.scss", "./src/js/*", "./src/Images/*"],
+    gulp.parallel(minifyHTML, style, configureJS, copyImages)
+  );
   gulp.watch("./src/*.html").on("change", browserSync.reload);
+  gulp.watch("./src/*.js").on("change", browserSync.reload);
 }
 
-exports.default = gulp.series(gulp.parallel(minifyHTML, style, copyImages), watch);
+exports.default = gulp.series(gulp.parallel(minifyHTML, style, configureJS, copyImages), watch);
 
 exports.minifyHTML = minifyHTML;
 exports.style = style;
+exports.configureJS = configureJS;
 exports.copyImages = copyImages;
 exports.watch = watch;

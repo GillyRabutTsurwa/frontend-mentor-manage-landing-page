@@ -12,9 +12,15 @@
   "devDependencies": {
     "browser-sync": "^2.26.13",
     "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-htmlmin": "^5.0.1",
     "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2",
     "sass": "^1.30.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7"
   }
 }
